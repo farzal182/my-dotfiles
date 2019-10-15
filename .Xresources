@@ -1,0 +1,73 @@
+! ------------------------------------------------------------------------------
+! Import Colour from ~/.xrdb
+! ------------------------------------------------------------------------------
+
+#include ".xrdb/color/nord"
+#include ".xrdb/rofi/nord"
+#include ".xrdb/dmenu/nord"
+#include ".xrdb/fonts/farzal"
+
+! ------------------------------------------------------------------------------
+! URxvt configs
+! ------------------------------------------------------------------------------
+
+URxvt.geometry: 		80x30
+URxvt*letterSpace: 		0
+URxvt.lineSpace: 		0
+URxvt*internalBorder:   10
+URxvt*externalBorder:   0
+URxvt*depth:            32
+URxvt*saveline:         2000
+URxvt*termName:         rxvt-256color
+URxvt*iso14755:         false
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:  false
+URxvt.perl-ext-common:  default,clipboard,url-select,keyboard-select
+URxvt.copyCommand:      xclip -i -selection clipboard
+URxvt.pasteCommand:     xclip -o -selection clipboard
+URxvt.keysym.M-c:       perl:clipboard:copy
+URxvt.keysym.M-v:       perl:clipboard:paste
+URxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape:  perl:keyboard-select:activate
+URxvt.keysym.Shift-Up:	command:\033]720;1\007
+URxvt.keysym.Shift-Down:command:\033]721;1\007
+URxvt.keysym.M-s:       perl:keyboard-select:search
+URxvt.keysym.M-u:       perl:url-select:select_next
+URxvt.urlLauncher:      firefox
+URxvt.underlineURLs:    true
+URxvt.urlButton:        1
+URxvt*buffered:         false          
+URxvt.urgentOnBell: 	True
+
+!------------------------------------------------------------------------------
+! XTERM PREFERENCES
+!------------------------------------------------------------------------------
+XTerm*termName:               xterm-256color
+XTerm*vt100.locale:           true
+XTerm*vt100.metaSendsEscape:  true
+XTerm*vt100.backarrowKey:     false
+XTerm*ttyModes:               erase ^?
+XTerm*vt100.saveLines:        4096
+XTerm*vt100.geometry:         100x32
+XTerm*vt100.translations:     #override \n\
+                              Ctrl <Key> minus: smaller-vt-font() \n\
+                              Ctrl <Key> plus: larger-vt-font()
+XTerm*vt100.faceName:         xos4 Terminess Powerline:size=16:antialias=true
+XTerm*vt100.boldFont:         xos4 Terminess Powerline:bold:size=16:antialias=true
+XTerm*vt100.allowTitleOps:    true
+XTerm*border:                 off
+xTerm*borderWidth:            0
+XTerm*Thickness:              0
+xTerm*loginShell:             true
+XTerm*multiScroll:            on
+
+! ------------------------------------------------------------------------------
+! Xft Font Configuration bg #002B36
+! ------------------------------------------------------------------------------
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb

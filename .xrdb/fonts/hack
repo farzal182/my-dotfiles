@@ -1,0 +1,5 @@
+! fonts
+*.font:  		xft:Hack:regular:size=8.5
+*.boldfont:		xft:Hack:bold:size=8.5
+*.italicfont:	xft:Hack:italic:size=8.5
+*.bolditalicfont: xft:hack:bold italic:size=8.5

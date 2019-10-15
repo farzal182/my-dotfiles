@@ -1,0 +1,5 @@
+! fonts
+*.font:  		xft:UbuntuMono:regular:size=9
+*.boldfont:		xft:UbuntuMono:bold:size=9
+*.italicfont:	xft:UbuntuMono:italic:size=9
+*.bolditalicfont: xft:UbuntuMono:bold italic:size=9

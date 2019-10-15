@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Greybird-Pro
+Comment=Theme for linux based on Greybird theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Greybird-Pro
+MetacityTheme=Greybird-Pro
+IconTheme=elementary-xfce-dark
+CursorTheme=DMZ-White
+ButtonLayout=:minimize,maximize,close
