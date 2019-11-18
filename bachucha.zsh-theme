@@ -14,7 +14,7 @@ GIT_DIRTY_COLOR=$FG[133]
 GIT_CLEAN_COLOR=$FG[118]
 GIT_PROMPT_INFO=$fg_bold[red]
 
-PROMPT='%{$fg_bold[magenta]%}%n%{$reset_color%} %{$fg_bold[red]%}@ %m:%{$YELLOW%} "$(date +%d" "%b" "%y" - "%H:%M)"%{$reset_color%} %{$BLUE%}<%~>%{$reset_color%}%{$GIT_PROMPT_INFO%}$(git_prompt_info)$(virtualenv_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%} '
+PROMPT='%{$fg_bold[magenta]%}%n%{$reset_color%}%{$fg_bold[red]%}@%m%{$YELLOW%} [$(date +%D", "%H:%M)]%{$reset_color%} %{$BLUE%}<%~>:%{$reset_color%}%{$GIT_PROMPT_INFO%}$(git_prompt_info)$(virtualenv_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%} '
 
 #RPS1="${return_code}"
 
