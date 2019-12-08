@@ -1,0 +1,144 @@
+[colors]
+
+background = #2f343f
+background-alt = #4f545f
+foreground = #d8dee8
+foreground-alt = #787e68
+accent = #81a1c1
+alert = #ebcb8b
+
+
+[bar/top]
+
+monitor = LVDS-1
+height = 18
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 2
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+font-0 = Mononoki:pixelsize=8.5;1
+font-1 = Mononoki Nerd Font:pixelsize=9;1
+tray-position = right
+;tray-background = ${colors.background}
+wm-restack = bspwm
+modules-left = bspwm
+modules-center = xwindow
+modules-right = wlan temperature volume date
+
+
+[module/bspwm]
+
+type = internal/bspwm
+label-focused = %name%
+label-focused-background= ${colors.background-alt}
+label-focused-padding = 3
+label-occupied = %name%
+label-occupied-padding = 3
+label-occupied-foreground= ${colors.foreground}
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 3
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 3
+
+
+[module/xwindow]
+
+type = internal/xwindow
+label = %title:0:100:...%
+
+
+[module/netspdwlan]
+
+type = internal/network
+interface = wlp3s0
+interval = 1.0
+format-connected = "<label-connected>"
+label-connected = "  %downspeed:3%  %upspeed:3% "
+label-connected-foreground = ${colors.foreground}
+label-connected-background = ${colors.background}
+
+
+[module/wlan]
+
+type = internal/network
+interface = wlp3s0
+interval = 1.0
+
+format-connected ="<label-connected>"
+label-connected = " %essid:0:10%"
+label-connected-foreground = ${colors.foreground}
+label-connected-background = ${colors.background}
+content-foreground = ${colors.background}
+content-background = ${colors.background}
+
+format-disconnected = <label-disconnected>
+label-disconnected = "disconnected"
+label-disconnected-foreground = ${colors.alert}
+label-disconnected-background = ${colors.background}
+
+
+[module/volume]
+
+type = internal/volume
+format-volume = <label-volume> <bar-volume>
+label-volume = ""
+label-volume-foreground = ${colors.foreground}
+format-muted-prefix = ""
+format-muted-foreground = ${colors.accent}
+label-muted = Muted
+label-muted-foreground= ${colors.foreground-alt}
+bar-volume-width = 6
+bar-volume-indicator = 
+bar-volume-fill = ─
+bar-volume-empty = ─
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+
+[module/temperature]
+
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 80
+
+format = "<ramp><label>"
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+label = "%temperature-c%"
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+format-warn = <ramp><label-warn>
+label-warn = "%temperature-c%"
+label-warn-foreground = ${colors.alert}
+
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
+ramp-3 = " "
+ramp-4 = " "
+ramp-foreground = ${colors.foreground}
+ramp-background = ${colors.background}
+ramp-font = 2
+
+
+[module/date]
+
+type = internal/date
+interval = 1
+
+date = "
+time = " %H:%M"
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-prefix-background = ${colors.background}
+format-prefix-font = 2
+
+label = "%date%%time%"
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
