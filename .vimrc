@@ -33,6 +33,7 @@ set magic
 
 " Display 5 lines above/below the cursor when scrolling with a mouse.
 set scrolloff=5
+
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
@@ -50,16 +51,16 @@ set matchpairs+=<:>
 
 " Show line numbers
 set number
-highlight LineNr ctermfg=black
+highlight LineNr ctermfg=blue
 
 " Set status line display
 set laststatus=2
-hi StatusLine ctermfg=NONE ctermbg=red cterm=NONE
-hi StatusLineNC ctermfg=black ctermbg=red cterm=NONE
+hi StatusLine ctermfg=black ctermbg=blue cterm=NONE
+hi StatusLineNC ctermfg=black ctermbg=blue cterm=NONE
 hi User1 ctermfg=black ctermbg=magenta
 hi User2 ctermfg=NONE ctermbg=NONE
-hi User3 ctermfg=black ctermbg=blue
-hi User4 ctermfg=black ctermbg=cyan
+hi User3 ctermfg=black ctermbg=magenta
+hi User4 ctermfg=black ctermbg=blue
 set statusline=\                    " Padding
 set statusline+=%f                  " Path to the file
 set statusline+=\ %1*\              " Padding & switch colour
@@ -94,3 +95,21 @@ set smartcase
 " Store info from no more than 100 files at a time, 9999 lines of text
 " 100kb of data. Useful for copying large amounts of data between files.
 set viminfo='100,<9999,s100
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'scrooloose/nerdtree'
+call vundle#end()
+filetype plugin indent on
+
+colorscheme nord
+
+" Nerd tree
+   map <leader>n :NERDTreeToggle<CR>
+   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
